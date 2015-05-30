@@ -95,8 +95,10 @@ nav .indicator:not(.datetime) {
   align-self: center;
 }
 
-.popover .item p {
+.popover .item .header {
   padding-left: 12px;
+  flex: 1;
+  line-height: 24px;
 }
 
 .menu-item {

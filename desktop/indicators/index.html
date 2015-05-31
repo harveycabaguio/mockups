@@ -14,19 +14,28 @@
     <link rel="stylesheet" href="layout.css">
 
     <script>
-      function toggle(){
+      function togglePO(){
         if (document.getElementById('right-popover').style.opacity=='0') {
           document.getElementById('right-popover').style.animationName='fadeInDown';
-          document.getElementById('right-popover').style.animationDuration='1s';
+          document.getElementById('right-popover').style.animationDuration='0.3s';
           document.getElementById('right-popover').style.opacity='1.0';
         } else {
           document.getElementById('right-popover').style.animationName='fadeOutUp';
-          document.getElementById('right-popover').style.animationDuration='1s';
+          document.getElementById('right-popover').style.animationDuration='0.3s';
           document.getElementById('right-popover').addEventListener('animationend', hide())
         }
       }
       function hide(){
         document.getElementById('right-popover').style.opacity='0';
+      }
+      function toggleWifi(){
+        if (document.getElementById('wifi').checked){
+          document.getElementById('network-list').style.display='block';
+          document.getElementById('new-network').style.display='block';
+        } else {
+          document.getElementById('network-list').style.display='none';
+          document.getElementById('new-network').style.display='none';
+        }
       }
     </script>
   </head>
@@ -34,10 +43,10 @@
     <nav>
       <a class="slingshot" href="#">Applications</a>
       <a class="indicator" id="datetime" href="#">Fri 29 May 2:53 PM</a>
-      <a class="indicator" id="audio" href="#" onclick="toggle()"><img src="audio-volume-high-symbolic.svg"></a>
-      <a class="indicator" id="network" href="#" onclick="toggle()"><img src="network-wireless-signal-excellent-symbolic.svg"></a>
-      <a class="indicator" id="power" href="#"><img src="battery-good-symbolic.svg"></a>
-      <a class="indicator" id="session" href="#"><img src="avatar-default-symbolic.svg"></a>
+      <a class="indicator" id="audio" href="#" onclick="togglePO()"><img src="audio-volume-high-symbolic.svg"></a>
+      <a class="indicator" id="network" href="#" onclick="togglePO()"><img src="network-wireless-signal-excellent-symbolic.svg"></a>
+      <a class="indicator" id="power" href="#" onclick="togglePO()"><img src="battery-good-symbolic.svg"></a>
+      <a class="indicator" id="session" href="#" onclick="togglePO()"><img src="avatar-default-symbolic.svg"></a>
     </nav>
     <div class="popover top" id="right-popover">
       <div id="network-content">
@@ -51,17 +60,17 @@
         <div class="item">
           <label class="left header" for="wifi">Wi-fi</label>
           <div class="right">
-            <input class="switch" type="checkbox" id="wifi" checked>
+            <input class="switch" type="checkbox" id="wifi" onclick="toggleWifi()" checked>
             <label for="wifi">On/Off</label>
           </div>
-          <ul>
+          <ul id="network-list">
               <li><input class="radio" type="radio" name="wifi" id="1" checked="checked"><label for="1">5F45A1</label><img src="nm-signal-50-secure-symbolic.svg"></li>
               <li><input class="radio" type="radio" name="wifi" id="2"><label for="2">Secure Network</label><img src="nm-signal-50-secure-symbolic.svg"></li>
               <li><input class="radio" type="radio" name="wifi" id="3"><label for="3">A Very Long Network Connection Name</label><img src="nm-signal-50-secure-symbolic.svg"></li>
               <li><input class="radio" type="radio" name="wifi" id="4"><label for="4">Unsecure Network</label><img src="network-wireless-signal-ok-symbolic.svg"></li>
               <li><input class="radio" type="radio" name="wifi" id="5"><label for="5">Another Unsecure Network</label><img src="network-wireless-signal-ok-symbolic.svg"></li>
             </ul>
-          <a class="menu-item" href="">Connect to a Hidden Network&hellip;</a>
+          <a class="menu-item" id="new-network" href="#">Connect to a Hidden Network&hellip;</a>
         </div>
         <div class="item">
           <label class="left header" for="vpn">VPN</label>

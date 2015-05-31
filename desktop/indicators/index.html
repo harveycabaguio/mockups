@@ -17,11 +17,11 @@
       function togglePO(){
         if (document.getElementById('right-popover').style.opacity=='0') {
           document.getElementById('right-popover').style.animationName='fadeInDown';
-          document.getElementById('right-popover').style.animationDuration='0.3s';
+          document.getElementById('right-popover').style.animationDuration='0.15s';
           document.getElementById('right-popover').style.opacity='1.0';
         } else {
           document.getElementById('right-popover').style.animationName='fadeOutUp';
-          document.getElementById('right-popover').style.animationDuration='0.3s';
+          document.getElementById('right-popover').style.animationDuration='0.15s';
           document.getElementById('right-popover').addEventListener('animationend', hide())
         }
       }

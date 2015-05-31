@@ -13,31 +13,7 @@
     <link rel="stylesheet" href="https://rawgit.com/harveycabaguio/web-mockup-kit/gh-pages/layout.css">
     <link rel="stylesheet" href="layout.css">
 
-    <script>
-      function togglePO(){
-        if (document.getElementById('right-popover').style.opacity=='0') {
-          document.getElementById('right-popover').style.animationName='fadeInDown';
-          document.getElementById('right-popover').style.animationDuration='0.15s';
-          document.getElementById('right-popover').style.opacity='1.0';
-        } else {
-          document.getElementById('right-popover').style.animationName='fadeOutUp';
-          document.getElementById('right-popover').style.animationDuration='0.15s';
-          document.getElementById('right-popover').addEventListener('animationend', hide())
-        }
-      }
-      function hide(){
-        document.getElementById('right-popover').style.opacity='0';
-      }
-      function toggleWifi(){
-        if (document.getElementById('wifi').checked){
-          document.getElementById('network-list').style.display='block';
-          document.getElementById('new-network').style.display='block';
-        } else {
-          document.getElementById('network-list').style.display='none';
-          document.getElementById('new-network').style.display='none';
-        }
-      }
-    </script>
+    <script src="indicator.js"></script>
   </head>
   <body>
     <nav>

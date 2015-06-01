@@ -8,16 +8,66 @@
  * }
  */
 
+lastIndicator = null;
+
 function togglePopover() {
-  'use strict';
-  if (document.getElementById('right-popover').style.opacity === '0') {
-    document.getElementById('right-popover').style.animationName = 'fadeInDown';
-    document.getElementById('right-popover').style.animationDuration = '0.15s';
-    document.getElementById('right-popover').style.opacity = '1.0';
+  var popover = document.getElementById('right-popover')
+  // if popover not open then animate and show the content of clicked indicator
+  if (popover.style.opacity == 0) {
+    switch (this.id) {
+    case "network":
+      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('network-content').style.display = 'block';
+      document.getElementById('power-content').style.display = 'none';
+      //document.getElementById('session-content').style.display = 'none';
+      break;
+    case "power":
+      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('network-content').style.display = 'none';
+      document.getElementById('power-content').style.display = 'block';
+      //document.getElementById('session-content').style.display = 'none';
+      break;
+    }
+
+    popover.style.animationName = 'fadeInDown';
+    popover.style.animationDuration = '0.15s';
+    popover.style.opacity = '1.0';
+    lastIndicator = this.id;
   } else {
-    document.getElementById('right-popover').style.animationName = 'fadeOutUp';
-    document.getElementById('right-popover').style.animationDuration = '0.15s';
-    document.getElementById('right-popover').style.opacity = '0';
+    // if I press the same indicator as last time, close the popover
+    if (lastIndicator.localeCompare(this.id) == '0') {
+      popover.style.animationName = 'fadeOutUp';
+      popover.style.animationDuration = '0.15s';
+      popover.style.opacity = '0';
+    } else {
+      switch (this.id) {
+      case "network":
+        //document.getElementById('audio-content').style.display = 'none';
+        document.getElementById('network-content').style.display = 'block';
+        document.getElementById('power-content').style.display = 'none';
+        //document.getElementById('session-content').style.display = 'none';
+        break;
+      case "power":
+        //document.getElementById('audio-content').style.display = 'none';
+        document.getElementById('network-content').style.display = 'none';
+        document.getElementById('power-content').style.display = 'block';
+        //document.getElementById('session-content').style.display = 'none';
+        break;
+      }
+      lastIndicator = this.id;
+    }
+  }
+}
+
+function listen() {
+  'use strict';
+  var audio = document.getElementById('audio'), network = document.getElementById('network'), power = document.getElementById('power'), session = document.getElementById('session');
+
+  if (audio && network && power && session) {
+    audio.addEventListener("click", togglePopover);
+    network.addEventListener("click", togglePopover);
+    power.addEventListener("click", togglePopover);
+    session.addEventListener("click", togglePopover);
   }
 }
 

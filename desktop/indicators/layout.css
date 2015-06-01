@@ -80,7 +80,7 @@ nav .indicator:not(#datetime) {
   top: 45px;
   right: 1px;
 
-  width: 300px;
+/*  width: 300px;*/
   margin-bottom: 12px;
 
   background-image: linear-gradient(rgb(248,248,248),
@@ -109,14 +109,22 @@ nav .indicator:not(#datetime) {
 }
 
 #right-popover {
+  display: flex;
   animation-duration: 1s;
+  opacity: 0.0;
 }
 
-#network-content {
-  display: block;
+.container {
+  display: inline-block;
+  width: 300px;
 }
 
-.popover .item {
+#network-content,
+#power-content {
+  display: none;
+}
+
+.popover .item, .popover .notification {
   display: flex;
   flex-wrap: wrap;
   padding-top: 12px;
@@ -125,6 +133,10 @@ nav .indicator:not(#datetime) {
 
   border-bottom: 1px solid rgba(0,0,0,0.2);
   box-shadow: 0 1px rgb(255,255,255);
+}
+
+.popover .notification {
+  padding: 6px;
 }
 
 .popover .item:last-child {
@@ -141,6 +153,38 @@ nav .indicator:not(#datetime) {
   padding-left: 12px;
   flex: 1;
   line-height: 24px;
+}
+
+.icon.left {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#mouse {
+  background-image: url("input-mouse.svg");
+}
+
+#laptop {
+  background-image: url("battery-ac-adapter.svg");
+}
+
+.icon img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.icon + .right .header {
+  padding-left: 0;
+}
+
+.right {
+  align-self: center;
 }
 
 .menu-item {

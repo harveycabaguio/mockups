@@ -15,17 +15,17 @@
 
     <script src="indicator.js"></script>
   </head>
-  <body>
+  <body onload="listen()">
     <nav>
       <a class="slingshot" href="#">Applications</a>
       <a class="indicator" id="datetime" href="#">Fri 29 May 2:53 PM</a>
-      <a class="indicator" id="audio" href="#" onclick="togglePO()"><img src="audio-volume-high-symbolic.svg"></a>
-      <a class="indicator" id="network" href="#" onclick="togglePO()"><img src="network-wireless-signal-excellent-symbolic.svg"></a>
-      <a class="indicator" id="power" href="#" onclick="togglePO()"><img src="battery-good-symbolic.svg"></a>
-      <a class="indicator" id="session" href="#" onclick="togglePO()"><img src="avatar-default-symbolic.svg"></a>
+      <a class="indicator" id="audio" href="#"><img src="audio-volume-high-symbolic.svg"></a>
+      <a class="indicator" id="network" href="#"><img src="network-wireless-signal-excellent-symbolic.svg"></a>
+      <a class="indicator" id="power" href="#"><img src="battery-good-symbolic.svg"></a>
+      <a class="indicator" id="session" href="#"><img src="avatar-default-symbolic.svg"></a>
     </nav>
     <div class="popover top" id="right-popover">
-      <div id="network-content">
+      <div class="container" id="network-content">
         <div class="item">
           <label class="left header" for="wired">Wired</label>
           <div class="right">
@@ -57,6 +57,29 @@
         </div>
         <div class="item">
           <a class="menu-item" href="">Network Settings&hellip;</a>
+        </div>
+      </div>
+      <div class="container" id="power-content">
+        <div class="notification">
+          <div class="icon left" id="laptop">
+            <img src="">
+          </div>
+          <div class="right">
+            <p class="header">Laptop Battery</p>
+            <p>Plugged In</p>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="icon left" id="mouse">
+            <img src="battery.svg">
+          </div>
+          <div class="right">
+            <p class="header">Logitech M305 Mouse</p>
+            <p>55&#37; Remaining</p>
+          </div>
+        </div>
+        <div class="item">
+          <a class="menu-item" href="#">Power Settings&hellip;</a>
         </div>
       </div>
     </div>

@@ -14,49 +14,41 @@ function togglePopover() {
   var popover = document.getElementById('right-popover')
   // if popover not open then animate and show the content of clicked indicator
   if (popover.style.opacity == 0) {
-    switch (this.id) {
-    case "network":
-      //document.getElementById('audio-content').style.display = 'none';
-      document.getElementById('network-content').style.display = 'block';
-      document.getElementById('power-content').style.display = 'none';
-      //document.getElementById('session-content').style.display = 'none';
-      break;
-    case "power":
-      //document.getElementById('audio-content').style.display = 'none';
-      document.getElementById('network-content').style.display = 'none';
-      document.getElementById('power-content').style.display = 'block';
-      //document.getElementById('session-content').style.display = 'none';
-      break;
-    }
-
+    switchContent(this.id, popover);
     popover.style.animationName = 'fadeInDown';
     popover.style.animationDuration = '0.15s';
     popover.style.opacity = '1.0';
-    lastIndicator = this.id;
   } else {
     // if I press the same indicator as last time, close the popover
     if (lastIndicator.localeCompare(this.id) == '0') {
       popover.style.animationName = 'fadeOutUp';
       popover.style.animationDuration = '0.15s';
       popover.style.opacity = '0';
-    } else {
-      switch (this.id) {
-      case "network":
-        //document.getElementById('audio-content').style.display = 'none';
-        document.getElementById('network-content').style.display = 'block';
-        document.getElementById('power-content').style.display = 'none';
-        //document.getElementById('session-content').style.display = 'none';
-        break;
-      case "power":
-        //document.getElementById('audio-content').style.display = 'none';
-        document.getElementById('network-content').style.display = 'none';
-        document.getElementById('power-content').style.display = 'block';
-        //document.getElementById('session-content').style.display = 'none';
-        break;
-      }
       lastIndicator = this.id;
+    } else {
+      switchContent(this.id, popover);
     }
   }
+}
+
+function switchContent(content, popover) {
+  switch (content) {
+  case "network":
+    //document.getElementById('audio-content').style.display = 'none';
+    document.getElementById('network-content').style.display = 'block';
+    document.getElementById('power-content').style.display = 'none';
+    //document.getElementById('session-content').style.display = 'none';
+    popover.className = "popover network top";
+    break;
+  case "power":
+    //document.getElementById('audio-content').style.display = 'none';
+    document.getElementById('network-content').style.display = 'none';
+    document.getElementById('power-content').style.display = 'block';
+    //document.getElementById('session-content').style.display = 'none';
+    popover.className = "popover power top";
+    break;
+  }
+  lastIndicator = content;
 }
 
 function listen() {

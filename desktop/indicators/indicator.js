@@ -11,7 +11,7 @@
 lastIndicator = null;
 
 function togglePopover() {
-  var popover = document.getElementById('right-popover')
+  var popover = document.getElementById('right-popover');
   // if popover not open then animate and show the content of clicked indicator
   if (popover.style.opacity == 0) {
     switchContent(this.id, popover);
@@ -33,29 +33,40 @@ function togglePopover() {
 
 function switchContent(content, popover) {
   switch (content) {
-  case "network":
-    //document.getElementById('audio-content').style.display = 'none';
-    document.getElementById('network-content').style.display = 'block';
-    document.getElementById('power-content').style.display = 'none';
-    //document.getElementById('session-content').style.display = 'none';
-    popover.className = "popover network top";
-    break;
-  case "power":
-    //document.getElementById('audio-content').style.display = 'none';
-    document.getElementById('network-content').style.display = 'none';
-    document.getElementById('power-content').style.display = 'block';
-    //document.getElementById('session-content').style.display = 'none';
-    popover.className = "popover power top";
-    break;
+    case "notify":
+      document.getElementById('notify-content').style.display = 'block';
+      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('network-content').style.display = 'none';
+      document.getElementById('power-content').style.display = 'none';
+      //document.getElementById('session-content').style.display = 'none';
+      popover.className = "popover notify top";
+      break;
+    case "network":
+      document.getElementById('notify-content').style.display = 'none';
+      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('network-content').style.display = 'block';
+      document.getElementById('power-content').style.display = 'none';
+      //document.getElementById('session-content').style.display = 'none';
+      popover.className = "popover network top";
+      break;
+    case "power":
+      document.getElementById('notify-content').style.display = 'none';
+      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('network-content').style.display = 'none';
+      document.getElementById('power-content').style.display = 'block';
+      //document.getElementById('session-content').style.display = 'none';
+      popover.className = "popover power top";
+      break;
   }
   lastIndicator = content;
 }
 
 function listen() {
   'use strict';
-  var audio = document.getElementById('audio'), network = document.getElementById('network'), power = document.getElementById('power'), session = document.getElementById('session');
+  var notify = document.getElementById('notify'), audio = document.getElementById('audio'), network = document.getElementById('network'), power = document.getElementById('power'), session = document.getElementById('session');
 
   if (audio && network && power && session) {
+    notify.addEventListener("click", togglePopover);
     audio.addEventListener("click", togglePopover);
     network.addEventListener("click", togglePopover);
     power.addEventListener("click", togglePopover);

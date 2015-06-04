@@ -19,12 +19,59 @@
     <nav>
       <a class="slingshot" href="#">Applications</a>
       <a class="indicator" id="datetime" href="#">Fri 29 May 2:53 PM</a>
+      <a class="indicator" id="notify" href="#"><img src="notification-new-symbolic.svg"></a>
       <a class="indicator" id="audio" href="#"><img src="audio-volume-high-symbolic.svg"></a>
       <a class="indicator" id="network" href="#"><img src="network-wireless-signal-excellent-symbolic.svg"></a>
       <a class="indicator" id="power" href="#"><img src="battery-good-symbolic.svg"></a>
       <a class="indicator" id="session" href="#"><img src="avatar-default-symbolic.svg"></a>
     </nav>
-    <div class="popover top" id="right-popover">
+    <div class="popover notify top" id="right-popover">
+      <div class="container" id="notify-content">
+        <div class="item">
+          <label class="left header" for="dnd">Do Not Disturb</label>
+          <div class="right">
+            <input class="switch" id="dnd" type="checkbox">
+            <label for="dnd"></label>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">
+            <img src="utilities-terminal.svg">
+            <p class="header">Terminal</p>
+          </div>
+          <div class="right">
+            <a class="button">Clear</a>
+          </div>
+          <ul>
+            <li>
+              <p class="header">Task Finished</p>
+              <p>sudo apt-get autoclean</p>
+            </li>
+            <li>
+              <p class="header">Task Finished</p>
+              <p>bzr branch lp:elementaryicons</p>
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="left">
+            <img src="system-file-manager.svg">
+            <p class="header">Files</p>
+          </div>
+          <div class="right">
+            <a class="button">Clear</a>
+          </div>
+          <ul>
+            <li>
+              <p class="header">Files Copied</p>
+              <p>300 items copied to ~/Pictures</p>
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <a class="menu-item" href="">Notification Settings&hellip;</a>
+        </div>
+      </div>
       <div class="container" id="network-content">
         <div class="item">
           <label class="left header" for="wired">Wired</label>

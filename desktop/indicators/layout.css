@@ -96,7 +96,6 @@ nav .indicator:not(#datetime) {
 .popover.top::before {
   position: absolute;
   top: -23px;
-  /*left: 270px;*/
   z-index: 2;
 
   width: 0;
@@ -108,12 +107,16 @@ nav .indicator:not(#datetime) {
   transition: all 200ms ease-in;
 }
 
+.popover.notify.top::before {
+  right: 166px;
+}
+
 .popover.network.top::before {
-  left: 190px;
+  right: 87px;
 }
 
 .popover.power.top::before {
-  left: 230px;
+  right: 47px;
 }
 
 #right-popover {
@@ -127,6 +130,7 @@ nav .indicator:not(#datetime) {
   width: 300px;
 }
 
+#notify-content,
 #network-content,
 #power-content {
   display: none;
@@ -153,12 +157,21 @@ nav .indicator:not(#datetime) {
 }
 
 .popover .item .left {
+  display: flex;
+  margin-left: 12px;
   margin-right: auto;
   align-self: center;
 }
 
+.popover .item .left img {
+  margin-right: 12px;
+}
+
+.popover .item .right {
+  margin-right: 12px;
+}
+
 .popover .item .header {
-  padding-left: 12px;
   flex: 1;
   line-height: 24px;
 }
@@ -216,7 +229,11 @@ nav .indicator:not(#datetime) {
   overflow-y: auto;
 }
 
-.popover .item li {
+.popover .item ul:last-child {
+  margin-bottom: 0;
+}
+
+#network-list li {
   display: flex;
 }
 
@@ -256,7 +273,6 @@ nav .indicator:not(#datetime) {
   display: inline-block;
   width: 48px;
   height: 24px;
-  margin-right: 12px;
 
   color: transparent;
   transition: all 100ms ease-in;

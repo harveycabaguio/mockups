@@ -30,7 +30,7 @@
         <div class="item">
           <label class="left header" for="dnd">Do Not Disturb</label>
           <div class="right">
-            <input class="switch" id="dnd" type="checkbox" checked>
+            <input class="switch" id="dnd" type="checkbox" onclick="toggleDnD()" checked>
             <label for="dnd"></label>
           </div>
           <div class="button-linked" id="dnd-length">
@@ -44,18 +44,18 @@
         <div class="item">
           <div class="left">
             <img src="utilities-terminal.svg">
-            <p class="header">Terminal</p>
+            <h2>Terminal</h2>
           </div>
           <div class="right">
             <a class="button">Clear</a>
           </div>
           <ul class="notifications">
             <li>
-              <h2>Task Finished</h2>
+              <p class="header">Task Finished</p>
               <p>sudo apt-get autoclean</p>
             </li>
             <li>
-              <h2>Task Finished</h2>
+              <p class="header">Task Finished</p>
               <p>bzr branch lp:elementaryicons</p>
             </li>
           </ul>
@@ -63,14 +63,14 @@
         <div class="item">
           <div class="left">
             <img src="system-file-manager.svg">
-            <p class="header">Files</p>
+            <h2>Files</h2>
           </div>
           <div class="right">
             <a class="button">Clear</a>
           </div>
           <ul class="notifications">
             <li>
-              <h2>Files Copied</h2>
+              <p class="header">Files Copied</p>
               <p>300 items copied to ~/Pictures</p>
             </li>
           </ul>

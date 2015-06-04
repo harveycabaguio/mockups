@@ -86,3 +86,11 @@ function toggleWifi() {
     document.getElementById('new-network').style.display = 'none';
   }
 }
+
+function toggleDnD() {
+  if (document.getElementById('dnd').checked) {
+    document.getElementById('dnd-length').style.display = 'inherit';
+  } else {
+    document.getElementById('dnd-length').style.display = 'none';
+  }
+}

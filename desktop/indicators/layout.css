@@ -242,6 +242,10 @@ nav .indicator:not(#datetime) {
   text-align: center;
 }
 
+.notifications li {
+  padding-left: 36px;
+}
+
 #network-list li {
   display: flex;
 }

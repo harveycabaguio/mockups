@@ -233,6 +233,15 @@ nav .indicator:not(#datetime) {
   margin-bottom: 0;
 }
 
+#dnd-length {
+  margin-top: 12px;
+  width: 300px;
+}
+
+#dnd-length a.button.left {
+  text-align: center;
+}
+
 #network-list li {
   display: flex;
 }

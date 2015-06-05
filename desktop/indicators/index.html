@@ -73,42 +73,80 @@
           </li>
         </ul>
         <hr>
-        <a class="item">Notification Settings&hellip;</a>
+        <a class="item menu">Clear All Notifications</a>
+        <a class="item menu">Notification Settings&hellip;</a>
       </section>
-      <div class="container" id="network-content">
+      <section class="container" id="network-content">
         <div class="item">
-          <label class="left header" for="wired">Wired</label>
-          <div class="right">
-            <input class="switch" type="checkbox" id="wired">
-            <label for="wired">On/Off</label>
-          </div>
+          <span class="left">
+            <label class="header" for="wired">Wired</label>
+          </span>
+          <span class="right">
+            <input class="switch" id="wired" type="checkbox">
+            <label for="wired"></label>
+          </span>
         </div>
+        <hr>
         <div class="item">
-          <label class="left header" for="wifi">Wi-fi</label>
-          <div class="right">
-            <input class="switch" type="checkbox" id="wifi" onclick="toggleWifi()" checked>
-            <label for="wifi">On/Off</label>
-          </div>
-          <ul id="network-list">
-              <li><input class="radio" type="radio" name="wifi" id="1" checked="checked"><label for="1">5F45A1</label><img src="nm-signal-50-secure-symbolic.svg"></li>
-              <li><input class="radio" type="radio" name="wifi" id="2"><label for="2">Secure Network</label><img src="nm-signal-50-secure-symbolic.svg"></li>
-              <li><input class="radio" type="radio" name="wifi" id="3"><label for="3">A Very Long Network Connection Name</label><img src="nm-signal-50-secure-symbolic.svg"></li>
-              <li><input class="radio" type="radio" name="wifi" id="4"><label for="4">Unsecure Network</label><img src="network-wireless-signal-ok-symbolic.svg"></li>
-              <li><input class="radio" type="radio" name="wifi" id="5"><label for="5">Another Unsecure Network</label><img src="network-wireless-signal-ok-symbolic.svg"></li>
-            </ul>
-          <a class="menu-item" id="new-network" href="#">Connect to a Hidden Network&hellip;</a>
+          <span class="left">
+            <label class="header" for="wifi1">Wifi Dongle #1</label>
+          </span>
+          <span class="right">
+            <input class="switch" id="wifi1" type="checkbox" onclick="toggleWifi()" checked>
+            <label for="wired1"></label>
+          </span>
         </div>
+        <ul class="network-list">
+          <li>
+            <input class="radio" type="radio" name="wifi1" id="1" checked>
+            <label for="1">5F45A1</label>
+            <img src="nm-signal-50-secure-symbolic.svg">
+          </li>
+          <li>
+            <input class="radio" type="radio" name="wifi" id="2">
+            <label for="2">Secure Network</label>
+            <img src="nm-signal-50-secure-symbolic.svg">
+          </li>
+          <li>
+            <input class="radio" type="radio" name="wifi" id="3">
+            <label for="3">A Very Long Network Connection Name</label>
+            <img src="nm-signal-50-secure-symbolic.svg">
+          </li>
+          <li>
+            <input class="radio" type="radio" name="wifi" id="4">
+            <label for="4">Unsecure Network</label>
+            <img src="network-wireless-signal-ok-symbolic.svg">
+          </li>
+          <li>
+            <input class="radio" type="radio" name="wifi" id="5">
+            <label for="5">Another Unsecure Network</label>
+            <img src="network-wireless-signal-ok-symbolic.svg">
+          </li>
+        </ul>
+        <a class="item menu">Connect to a Hidden Network&hellip;</a>
+        <hr>
         <div class="item">
-          <label class="left header" for="vpn">VPN</label>
-          <div class="right">
-            <input class="switch" type="checkbox" id="vpn">
-            <label for="vpn">On/Off</label>
-          </div>
+          <span class="left">
+            <label class="header" for="wifi2">Wifi Dongle #2</label>
+          </span>
+          <span class="right">
+            <input class="switch" id="wifi2" type="checkbox">
+            <label for="wifi2"></label>
+          </span>
         </div>
+        <hr>
         <div class="item">
-          <a class="menu-item" href="">Network Settings&hellip;</a>
+          <span class="left">
+            <label class="header" for="vpn">VPN</label>
+          </span>
+          <span class="right">
+            <input class="switch" id="vpn" type="checkbox">
+            <label for="vpn"></label>
+          </span>
         </div>
-      </div>
+        <hr>
+        <a class="item menu">Network Settings&hellip;</a>
+      </section>
       <div class="container" id="power-content">
         <div class="notification">
           <div class="icon left" id="laptop">

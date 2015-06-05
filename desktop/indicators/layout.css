@@ -196,7 +196,7 @@ hr {
 }
 
 .popover .item:hover,
-.notification-list li:hover {
+li:hover {
   background-color: rgba(0,0,0,0.1);
 }
 
@@ -225,7 +225,7 @@ hr {
   align-items: center;
 }
 
-.popover .item:last-child {
+.popover .item.menu {
   padding-top: 12px;
   padding-bottom: 12px;
 }
@@ -250,4 +250,19 @@ hr {
 
 .notification-list li *:last-child {
   flex-basis: 100%;
+}
+
+/* .network-content */
+.network-list li {
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+}
+
+.network-list li *:nth-child(2) {
+  padding-left: 6px;
+  margin-right: auto;
 }

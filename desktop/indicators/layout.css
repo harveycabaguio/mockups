@@ -66,6 +66,7 @@ html {
   height: 100vh;
   min-height: 100vh;
   overflow: hidden;
+  cursor: default;
 }
 
 body {
@@ -119,6 +120,8 @@ nav .indicator:not(#datetime) {
   right: 1px;
 
 /*  width: 300px;*/
+  padding-top: 6px;
+  padding-bottom: 6px;
   margin-bottom: 12px;
 
   background-image: linear-gradient(rgb(248,248,248),
@@ -178,29 +181,68 @@ nav .indicator:not(#datetime) {
   display: none;
 }
 
-.popover .item, .popover .notification {
+hr {
+  height: 0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgb(255,255,255);
+  border-left: none;
+}
+
+.popover .item {
   display: flex;
-  flex-wrap: wrap;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-bottom: 0;
-
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-  box-shadow: 0 1px rgb(255,255,255);
+  padding: 6px 12px;
 }
 
-.popover .notification {
-  padding: 6px;
+.popover .item:hover,
+.notification-list li:hover {
+  background-color: rgba(0,0,0,0.1);
 }
 
-.popover .item:last-child {
-  border-bottom: none;
-  box-shadow: none;
+.popover .item.with-icon {
+  padding-left: 6px;
+}
+
+.popover .item.with-icon .left *:nth-child(2) {
+  margin-left: 6px;
 }
 
 .popover .item .left {
   display: flex;
-  margin-left: 12px;
-  margin-right: auto;
+  flex: 1;
   align-self: center;
+  align-items: center;
+}
+
+.popover .item .right {
+  display: flex;
+  align-items: center;
+}
+
+.popover .item:last-child {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* .notify-content */
+.notification-list li {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  padding-left: calc(6px + 32px + 6px);
+}
+
+.notification-list li *:first-child {
+  flex: 1;
+}
+
+.notification-list li .right {
+  opacity: 0.6;
+}
+
+.notification-list li *:last-child {
+  flex-basis: 100%;
 }

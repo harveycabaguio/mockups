@@ -25,60 +25,56 @@
       <a class="indicator" id="power" href="#"><img src="battery-good-symbolic.svg"></a>
       <a class="indicator" id="session" href="#"><img src="avatar-default-symbolic.svg"></a>
     </nav>
-    <div class="popover notify top" id="right-popover">
-      <div class="container" id="notify-content">
+    <div class="popover top" id="right-popover">
+      <section class="container" id="notify-content">
         <div class="item">
-          <label class="left header" for="dnd">Do Not Disturb</label>
-          <div class="right">
+          <span class="left">
+            <label class="header" for="dnd">Do Not Disturb</label>
+          </span>
+          <span class="right">
             <input class="switch" id="dnd" type="checkbox" onclick="toggleDnD()" checked>
             <label for="dnd"></label>
-          </div>
-          <div class="button-linked" id="dnd-length">
-            <a class="button left">1h</a>
-            <a class="button center">2h</a>
-            <a class="button center">3h</a>
-            <a class="button center">4h</a>
-            <a class="button right active">&infin;</a>
-          </div>
+          </span>
         </div>
-        <div class="item">
-          <div class="left">
+        <hr>
+        <div class="item with-icon">
+          <span class="left">
             <img src="utilities-terminal.svg">
             <h2>Terminal</h2>
-          </div>
-          <div class="right">
+          </span>
+          <span class="right">
             <a class="button">Clear</a>
-          </div>
-          <ul class="notifications">
-            <li>
-              <p class="header">Task Finished</p>
-              <p>sudo apt-get autoclean</p>
-            </li>
-            <li>
-              <p class="header">Task Finished</p>
-              <p>bzr branch lp:elementaryicons</p>
-            </li>
-          </ul>
+          </span>
         </div>
-        <div class="item">
-          <div class="left">
+        <ul class="notification-list">
+          <li>
+            <p class="left header">Task Finished</p><p class="right">2m</p>
+            <p>sudo apt-get autoclean</p>
+          </li>
+          <li>
+            <p class="left header">Task Finished</p><p class="right">1h</p>
+            <p>bzr branch lp:elementaryicons</p>
+          </li>
+        </ul>
+        <hr>
+        <div class="item with-icon">
+          <span class="left">
             <img src="system-file-manager.svg">
             <h2>Files</h2>
-          </div>
-          <div class="right">
+          </span>
+          <span class="right">
             <a class="button">Clear</a>
-          </div>
-          <ul class="notifications">
-            <li>
-              <p class="header">Files Copied</p>
-              <p>300 items copied to ~/Pictures</p>
-            </li>
-          </ul>
+          </span>
         </div>
-        <div class="item">
-          <a class="menu-item" href="">Notification Settings&hellip;</a>
-        </div>
-      </div>
+        <ul class="notification-list">
+          <li>
+            <p class="left header">Files Copied</p><p class="right">27m</p>
+            <p>300 items copied to ~/Pictures</p>
+          </li>
+        </ul>
+        <hr>
+        <a class="item">Notification Settings&hellip;</a>
+      </section>
       <div class="container" id="network-content">
         <div class="item">
           <label class="left header" for="wired">Wired</label>

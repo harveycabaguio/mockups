@@ -35,15 +35,23 @@ function switchContent(content, popover) {
   switch (content) {
     case "notify":
       document.getElementById('notify-content').style.display = 'block';
-      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('audio-content').style.display = 'none';
       document.getElementById('network-content').style.display = 'none';
       document.getElementById('power-content').style.display = 'none';
       //document.getElementById('session-content').style.display = 'none';
       popover.className = "popover notify top";
       break;
+    case "audio":
+      document.getElementById('notify-content').style.display = 'none';
+      document.getElementById('audio-content').style.display = 'block';
+      document.getElementById('network-content').style.display = 'none';
+      document.getElementById('power-content').style.display = 'none';
+      //document.getElementById('session-content').style.display = 'none';
+      popover.className = "popover audio top";
+      break;
     case "network":
       document.getElementById('notify-content').style.display = 'none';
-      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('audio-content').style.display = 'none';
       document.getElementById('network-content').style.display = 'block';
       document.getElementById('power-content').style.display = 'none';
       //document.getElementById('session-content').style.display = 'none';
@@ -51,7 +59,7 @@ function switchContent(content, popover) {
       break;
     case "power":
       document.getElementById('notify-content').style.display = 'none';
-      //document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('audio-content').style.display = 'none';
       document.getElementById('network-content').style.display = 'none';
       document.getElementById('power-content').style.display = 'block';
       //document.getElementById('session-content').style.display = 'none';

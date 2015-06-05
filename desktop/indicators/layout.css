@@ -152,6 +152,10 @@ nav .indicator:not(#datetime) {
   right: 166px;
 }
 
+.popover.audio.top::before {
+  right: 126px;
+}
+
 .popover.network.top::before {
   right: 87px;
 }
@@ -250,6 +254,41 @@ li:hover {
 
 .notification-list li *:last-child {
   flex-basis: 100%;
+}
+
+/* .audio-content */
+#audio-content .left {
+  flex: 0;
+  flex-basis: 32px;
+}
+
+#audio-content .center {
+  flex: 1;
+  align-self: center;
+  margin: 0 12px;
+}
+
+#audio-content .center * {
+  width: 100%;
+}
+
+#music-player:hover {
+  background: transparent;
+}
+
+#music-player .left {
+  flex: 0;
+  flex-basis: 48px;
+}
+
+#music-player .right .button.flat {
+  margin-left: 6px;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+#music-player .right .button.flat:hover {
+  background-color: rgba(0,0,0,0.1);
 }
 
 /* .network-content */

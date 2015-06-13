@@ -1,0 +1,16 @@
+#tabbar {
+  display: flex;
+  height: 24px;
+
+  background-image: url('tabbar.png');
+  background-size: 100% 100%;
+}
+
+#new-tab {
+  position: relative;
+  padding: 0 3px;
+}
+
+#tabbar:active {
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('tabbar.png');
+}

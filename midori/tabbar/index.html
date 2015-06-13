@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Indicators</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="description" content="Demo of tab bar concept">
+    <meta name="keywords" content="elementary,midori,browser,internet">
+    <meta name="author" content="Harvey Cabaguio">
+
+    <link rel="stylesheet" href="https://rawgit.com/harveycabaguio/web-mockup-kit/gh-pages/ui.css">
+    <link rel="stylesheet" href="https://rawgit.com/harveycabaguio/web-mockup-kit/gh-pages/layout.css">
+    <link rel="stylesheet" href="layout.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+      $(document).mousemove(function(e){
+        if ($("#tabbar").is(":hover")) {
+          if($("#notebook").not($("#notebook").is(":hover"))) {
+            var offset = $("#tabbar").offset();
+            var pos = e.pageX - offset.left;
+            $("#new-tab").css({left:pos});
+          }
+        } else {
+          $("#new-tab").css({left:'0'});
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="window main">
+      <nav class="toolbar">
+        <input class="entry" type="text">
+      </nav>
+      <div id="tabbar">
+        <img id="new-tab" src="list-add-symbolic.svg">
+        <img id="notebook" src="notebook.png">
+      </div>
+    </div>
+  </body>
+</html>

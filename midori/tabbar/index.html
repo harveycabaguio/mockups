@@ -29,12 +29,55 @@
     </script>
   </head>
   <body>
+    <nav>
+      <a class="slingshot" href="#">Applications</a>
+      <a class="indicator" id="datetime" href="#">Fri 12 June 10:01 PM</a>
+      <a class="indicator" id="notify" href="#"><img src="../../../../desktop/indicators/notification-new-symbolic.svg"></a>
+      <a class="indicator" id="audio" href="#"><img src="../../../../desktop/indicators/audio-volume-high-symbolic.svg"></a>
+      <a class="indicator" id="network" href="#"><img src="../../../../desktop/indicators/network-wireless-signal-excellent-symbolic.svg"></a>
+      <a class="indicator" id="power" href="#"><img src="../../../../desktop/indicators/battery-good-symbolic.svg"></a>
+      <a class="indicator" id="session" href="#"><img src="../../../../desktop/indicators/avatar-default-symbolic.svg"></a>
+    </nav>
     <div class="window main">
       <nav class="toolbar">
-        <input class="entry" type="text">
+        <div class="left">
+          <a class="window control">
+            <svg
+              version="1.1"
+              width="16"
+              height="16"
+              id="window-close">
+              <path
+                d="m 4.8814786,4.0082925 c -0.2252363,0 -0.4518548,0.077632 -0.6237043,0.2494817 -0.3436992,0.343699 -0.3436992,0.9037095 0,1.2474086 L 6.7525914,7.9999999 4.2577743,10.494817 c -0.3436989,0.3437 -0.3436989,0.903709 0,1.247409 0.3437,0.343698 0.9037086,0.343698 1.2474085,0 L 8,9.2474085 10.494817,11.742226 c 0.3437,0.343698 0.903709,0.343698 1.247409,0 0.343699,-0.3437 0.343699,-0.903709 0,-1.247409 L 9.2474085,7.9999999 11.742226,5.5051828 c 0.343699,-0.3436991 0.343699,-0.9037096 0,-1.2474086 -0.343699,-0.3436989 -0.90371,-0.3436989 -1.247409,0 L 8,6.7525914 5.5051828,4.2577742 C 5.3333333,4.0859246 5.1067148,4.0082925 4.8814786,4.0082925 z"
+                id="close-icon" />
+            </svg>
+          </a>
+          <a class="button icon" href="#">
+            <img src="go-previous.svg">
+          </a>
+          <a class="button icon" href="#">
+            <img src="go-next.svg">
+          </a>
+        </div>
+        <div class="center">
+          <input class="entry" id="urlbar" type="text">
+        </div>
+        <div class="right">
+          <a class="window control">
+            <svg
+              version="1.1"
+              width="16"
+              height="16"
+              id="window-maximize">
+              <path
+                d="m 8,1 2.625,2.59375 -2,2 C 8.60998,5.60877 8.607846,5.60943 8.59375,5.625 8.1497304,6.115672 8.1518649,6.870614 8.625,7.34375 c 0.4729002,0.4729 1.228059,0.505848 1.71875,0.0625 l 0.25,-0.25 L 12.40625,5.375 15,8 15,1 z m -7,7 0,7 7,0 -2.625,-2.625 2,-2 C 7.39002,10.35998 7.392154,10.35932 7.40625,10.34375 7.8502666,9.8530771 7.8481351,9.0981352 7.375,8.625 6.9020995,8.1520995 6.1156905,8.1191556 5.625,8.5625 l -0.21875,0.25 -1.8125,1.8125 z"
+                id="maximize-icon"/>
+            </svg>
+          </a>
+        </div>
       </nav>
       <div id="tabbar">
-        <img id="new-tab" src="list-add-symbolic.svg">
+        <img id="new-tab" src="list-add-symbolic.svg" title="Create a new tab">
         <img id="notebook" src="notebook.png">
       </div>
     </div>

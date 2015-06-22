@@ -112,6 +112,8 @@ nav .indicator:not(#datetime) {
 
 nav .indicator#session {
   padding-top: 0;
+  margin-right: 0;
+  padding-right: 4px;
 }
 
 .indicator img {

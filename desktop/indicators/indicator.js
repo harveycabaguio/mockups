@@ -38,7 +38,7 @@ function switchContent(content, popover) {
       document.getElementById('audio-content').style.display = 'none';
       document.getElementById('network-content').style.display = 'none';
       document.getElementById('power-content').style.display = 'none';
-      //document.getElementById('session-content').style.display = 'none';
+      document.getElementById('session-content').style.display = 'none';
       popover.className = "popover notify top";
       break;
     case "audio":
@@ -46,7 +46,7 @@ function switchContent(content, popover) {
       document.getElementById('audio-content').style.display = 'block';
       document.getElementById('network-content').style.display = 'none';
       document.getElementById('power-content').style.display = 'none';
-      //document.getElementById('session-content').style.display = 'none';
+      document.getElementById('session-content').style.display = 'none';
       popover.className = "popover audio top";
       break;
     case "network":
@@ -54,7 +54,7 @@ function switchContent(content, popover) {
       document.getElementById('audio-content').style.display = 'none';
       document.getElementById('network-content').style.display = 'block';
       document.getElementById('power-content').style.display = 'none';
-      //document.getElementById('session-content').style.display = 'none';
+      document.getElementById('session-content').style.display = 'none';
       popover.className = "popover network top";
       break;
     case "power":
@@ -62,8 +62,16 @@ function switchContent(content, popover) {
       document.getElementById('audio-content').style.display = 'none';
       document.getElementById('network-content').style.display = 'none';
       document.getElementById('power-content').style.display = 'block';
-      //document.getElementById('session-content').style.display = 'none';
+      document.getElementById('session-content').style.display = 'none';
       popover.className = "popover power top";
+      break;
+    case "session":
+      document.getElementById('notify-content').style.display = 'none';
+      document.getElementById('audio-content').style.display = 'none';
+      document.getElementById('network-content').style.display = 'none';
+      document.getElementById('power-content').style.display = 'none';
+      document.getElementById('session-content').style.display = 'block';
+      popover.className = "popover session top";
       break;
   }
   lastIndicator = content;

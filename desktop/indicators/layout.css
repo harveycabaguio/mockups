@@ -1,3 +1,7 @@
+body {
+  background-image: url("Wild%20Night.jpg");
+}
+
 /*
  * Animations
  */
@@ -62,88 +66,10 @@
  * Desktop Style
  */
 
-html {
-  height: 100vh;
-  min-height: 100vh;
-  overflow: hidden;
-  cursor: default;
-}
-
-body {
-  width: 100vw:
-  min-height: 100vh;
-
-  background-image: url("Wild%20Night.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-nav {
-  display: flex;
-  width: 100vw;
-  height: 32px;
-}
-
-nav * {
-  align-self: center;
-
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
-
-  color: #fff;
-}
-
-nav .slingshot {
-  margin-left: 10px;
-}
-
-nav #datetime {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-nav .indicator:not(#datetime) {
-  height: 16px;
-  padding: 8px;
-  margin: 0 4px;
-}
-
-nav .indicator#session {
-  padding-top: 0;
-  margin-right: 0;
-  padding-right: 4px;
-}
-
-.indicator img {
-  -webkit-filter: drop-shadow(0 1px 1px rgba(0,0,0,1.0));
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.7));
-}
 
 /*
  * Popover
  */
-
-.popover {
-  position: absolute;
-  top: 45px;
-  right: 1px;
-
-/*  width: 300px;*/
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-bottom: 12px;
-
-  background-image: linear-gradient(rgb(248,248,248),
-                                    rgb(248,248,248) 70%,
-                                    rgb(238,238,238));
-  background-clip: padding-box;
-  border-radius: 4px;
-  border: 1px solid rgba(0,0,0,0.35);
-  box-shadow: 0 8px 60px rgba(0,0,0,0.7);
-  transition: all 300ms ease-in;
-}
 
 .popover.top::before {
   position: absolute;
@@ -175,10 +101,25 @@ nav .indicator#session {
   right: 47px;
 }
 
+.popover.session.top::before {
+  right: 2px;
+}
+
 #right-popover {
+  position: absolute;
+  top: 45px;
+  right: 1px;
+
   display: flex;
   animation-duration: 1s;
   opacity: 0.0;
+  overflow: visible;
+
+  width: 300px;
+  height: auto;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin: 0;
 }
 
 /*
@@ -187,13 +128,18 @@ nav .indicator#session {
 
 .container {
   display: inline-block;
-  width: 300px;
+  width: 100%;
 }
 
 #notify-content,
 #network-content,
-#power-content {
+#power-content,
+#session-content {
   display: none;
+}
+
+h4 {
+  margin: 0;
 }
 
 hr {
@@ -216,11 +162,11 @@ li:hover {
 }
 
 .popover .item.with-icon {
-  padding-left: 6px;
+  padding-left: 12px;
 }
 
 .popover .item.with-icon .left *:nth-child(2) {
-  margin-left: 6px;
+  margin-left: 12px;
 }
 
 .popover .item .left {
@@ -252,7 +198,7 @@ li:hover {
   padding-top: 6px;
   padding-right: 12px;
   padding-bottom: 6px;
-  padding-left: calc(6px + 32px + 6px);
+  padding-left: calc(12px + 32px + 12px);
 }
 
 .notification-list li *:first-child {
@@ -352,4 +298,46 @@ li:hover {
 #power-content .center * {
   flex-basis: 100%;
   align-self: center;
+}
+
+/* .session-content */
+
+#session-content .item.with-icon > .left {
+  flex: 0;
+  flex-basis: 48px;
+  margin-right: 6px;
+  height: 48px;
+}
+
+#user-avatar {
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,0.7));
+}
+
+#session-content .center {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+#session-content .center * {
+  flex-basis: 100%;
+  align-self: center;
+}
+
+#session-content .item.with-icon > .right {
+  flex-basis: 48px;
+}
+
+.user-options {
+  flex-basis: 48px;
+}
+
+.user-options .button * {
+  margin-left: 3px;
+}
+
+#power-options {
+  width: calc(100% - 24px);
+  margin-top: 12px;
+  margin-bottom: 6px;
 }

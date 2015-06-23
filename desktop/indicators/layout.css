@@ -154,6 +154,7 @@ hr {
 .popover .item {
   display: flex;
   padding: 6px 12px;
+  transition: all 200ms ease-in;
 }
 
 .popover .item:hover,
@@ -302,10 +303,13 @@ li:hover {
 
 /* .session-content */
 
+#me.item.with-icon:hover {
+  background: transparent;
+}
+
 #session-content .item.with-icon > .left {
   flex: 0;
   flex-basis: 48px;
-  align-self: flex-start;
   margin-right: 6px;
   height: 48px;
 }
@@ -326,25 +330,13 @@ li:hover {
   align-self: center;
 }
 
-#session-content .item.with-icon > .right {
-  display: flex;
-  flex-basis: 69px;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-#session-content .right .button {
-  width: 69px;
-  padding: 0;
-  text-align: center;
-}
-
-#session-content .right .button:nth-child(2) {
-  margin-top: 6px;
-}
-
-#power-options {
+.options {
   width: calc(100% - 24px);
   margin-top: 12px;
   margin-bottom: 6px;
 }
+
+  #user.options {
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }

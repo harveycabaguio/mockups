@@ -305,6 +305,7 @@ li:hover {
 #session-content .item.with-icon > .left {
   flex: 0;
   flex-basis: 48px;
+  align-self: flex-start;
   margin-right: 6px;
   height: 48px;
 }
@@ -317,6 +318,7 @@ li:hover {
   display: flex;
   flex: 1;
   flex-wrap: wrap;
+  height: 48px;
 }
 
 #session-content .center * {
@@ -325,15 +327,20 @@ li:hover {
 }
 
 #session-content .item.with-icon > .right {
-  flex-basis: 48px;
+  display: flex;
+  flex-basis: 69px;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-.user-options {
-  flex-basis: 48px;
+#session-content .right .button {
+  width: 69px;
+  padding: 0;
+  text-align: center;
 }
 
-.user-options .button * {
-  margin-left: 3px;
+#session-content .right .button:nth-child(2) {
+  margin-top: 6px;
 }
 
 #power-options {

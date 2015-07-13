@@ -1,0 +1,47 @@
+.window {
+  width: 80vw;
+  height: 80vh;
+  margin-top: 10vh;
+  margin-left: 10vw;
+}
+
+.header.bar {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: auto;
+}
+
+:not(.header) > .left-side {
+  width: calc(50%);
+  height: calc(100% - 50px);
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.header > .left-side {
+  width: 50%;
+  height: 50px;
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+.button-linked {
+  display: inline-block;
+  width: auto;
+  margin-left: 6px;
+  font-size: 0;
+}
+
+.button-linked .button {
+  font-weight: normal;
+  text-align: center;
+}
+
+.button-linked .left,
+.button-linked .center,
+.button-linked .right {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.source-list {
+  height: 100%;
+}

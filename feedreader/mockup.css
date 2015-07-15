@@ -45,3 +45,43 @@
 .source-list {
   height: 100%;
 }
+
+#tags.popover {
+  position: absolute;
+  top: calc(10vh + 54px);
+  left: calc(50% - 128px);
+
+  width: 256px;
+  overflow: visible;
+}
+
+#tags:before {
+  left: calc(50% + 8px);
+}
+
+.popover h4 {
+  margin-left: 12px;
+}
+
+#tags ul {
+  margin: 12px;
+
+  background-color: rgb(255,255,255);
+  border: 1px solid rgba(0,0,0,0.3);
+}
+#tags ul > li {
+  display: flex;
+  padding: 4px;
+}
+#tags ul > li:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+#tags ul > li > span {
+  margin-right: auto;
+}
+
+#tags .entry {
+  margin-left: 12px;
+  margin-bottom: 12px;
+  width: calc(100% - 34px);
+}
